@@ -1,0 +1,159 @@
+.our-work-section {
+  background-color: var(--bood-dark-secondary);
+  padding: 8rem 0;
+  color: var(--text-on-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.layout-flex {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Content Styles */
+.content-col {
+  flex: 0 0 35%;
+}
+
+.section-kicker {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(248, 246, 243, 0.6);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--text-on-dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--bood-accent);
+  margin-bottom: 2rem;
+}
+
+.explore-link {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: gap 0.3s ease;
+}
+
+.explore-link .arrow {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+.explore-link:hover {
+  gap: 1.25rem;
+}
+
+.explore-link:hover .arrow {
+  background: var(--bood-accent);
+  border-color: var(--bood-accent);
+  color: var(--bood-dark);
+}
+
+/* Right Gallery Styles */
+.gallery-col {
+  flex: 1;
+  position: relative;
+  min-width: 0; /* Ensures flex container doesn't overflow */
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: var(--bood-accent);
+  border-color: var(--bood-accent);
+  color: var(--bood-dark);
+}
+
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding-bottom: 2rem; /* space for hiding scrollbar */
+  padding-right: 2rem;
+  
+  /* Hide scrollbar for a clean UI carousel effect */
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  flex: 0 0 400px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .layout-flex { flex-direction: column; align-items: stretch; }
+  .content-col { flex: auto; text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 2rem; }
+  .gallery-item { flex: 0 0 300px; height: 400px; }
+  .carousel-nav { justify-content: center; padding-right: 0; }
+}
+
+@media (max-width: 576px) {
+  .gallery-item { flex: 0 0 250px; height: 350px; }
+  .section-title { font-size: 2.2rem; }
+}

@@ -1,0 +1,26 @@
+<div class="menu-page">
+  <header class="service-header">
+    <div class="header-bg" style="background-image: url('assets/bood-design/images/expertise-bg.png');"></div>
+    <div class="header-overlay"></div>
+    <div class="container header-content text-center">
+      <h1 class="page-title">Our Services Directory</h1>
+      <p class="breadcrumb"><a routerLink="/">Home</a> / Services</p>
+    </div>
+  </header>
+
+  <section class="content-section">
+    <div class="interior-container">
+      <div class="categories-grid">
+        @for (cat of categories; track cat.path) {
+          <a [routerLink]="['/services', cat.path]" class="category-card">
+            <div class="cat-content">
+              <h3>{{ cat.name }}</h3>
+              <p>{{ cat.description }}</p>
+              <span class="explore-btn">Explore <span class="arrow">→</span></span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+</div>

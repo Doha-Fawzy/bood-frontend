@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* Core Colors */
+  --bood-dark: #181615;
+  --bood-dark-secondary: #1E1C1B;
+  --bood-light: #F8F6F3;
+  --bood-accent: #D4C0A8;
+  
+  /* Text Colors */
+  --text-on-light: #181615;
+  --text-on-dark: #F8F6F3;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bood-light);
+  color: var(--text-on-light);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Base button styles */
+.btn-primary {
+  background: var(--bood-accent);
+  color: var(--bood-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #e6d3bd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 192, 168, 0.3);
+}

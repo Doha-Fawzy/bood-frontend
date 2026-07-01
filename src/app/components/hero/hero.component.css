@@ -1,0 +1,99 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  color: var(--text-on-dark);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  transform: scale(1.05);
+  animation: subtleZoom 25s infinite alternate linear;
+}
+
+@keyframes subtleZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, rgba(24, 22, 21, 0.95) 0%, rgba(24, 22, 21, 0.6) 40%, rgba(24, 22, 21, 0.2) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  padding-top: 120px; /* Offset for navbar */
+  max-width: 700px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 5.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: var(--bood-accent);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(248, 246, 243, 0.85);
+  margin-bottom: 3.5rem;
+}
+
+.btn-discover {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: gap 0.3s ease-in-out;
+}
+
+.btn-discover .arrow {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-discover:hover {
+  gap: 1.8rem;
+}
+
+.btn-discover:hover .arrow {
+  background: var(--bood-accent);
+  color: var(--bood-dark);
+  border-color: var(--bood-accent);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .hero-title { font-size: 4rem; }
+  .hero-overlay { background: linear-gradient(to right, rgba(24, 22, 21, 0.9) 0%, rgba(24, 22, 21, 0.7) 100%); }
+}
+
+@media (max-width: 576px) {
+  .hero-title { font-size: 3rem; }
+}

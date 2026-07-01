@@ -1,0 +1,28 @@
+<section class="services-section">
+  <div class="container layout-grid">
+    
+    <!-- Left Column: Header text -->
+    <div class="section-header">
+      <h5 class="section-kicker">WHAT WE DO</h5>
+      <h2 class="section-title">One Partner.<br>Every Detail Covered.</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        From hospitality and cleaning to maintenance and landscaping, we deliver seamless solutions with precision, care, and consistency.
+      </p>
+      <a href="#" class="explore-link">
+        Explore All Services <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Right Column: Services Cards with Connecting Line -->
+    <div class="services-track-container">
+      
+      <div class="services-grid">
+        @for (service of services; track service.id) {
+          <app-service-card [service]="service"></app-service-card>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

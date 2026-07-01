@@ -1,0 +1,56 @@
+.stats-section {
+  background-color: var(--bood-dark-secondary);
+  padding: 4rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-icon-img {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 1rem;
+  /* CSS Filter to turn black SVG into var(--bood-accent) #D4C0A8 */
+  filter: invert(85%) sepia(12%) saturate(836%) hue-rotate(339deg) brightness(91%) contrast(93%);
+  object-fit: contain;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--text-on-dark);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.stat-text {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(248, 246, 243, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+  .stats-container { justify-content: space-around; }
+  .stat-item { flex: 0 0 30%; margin-bottom: 2rem; }
+}
+
+@media (max-width: 576px) {
+  .stat-item { flex: 0 0 45%; }
+  .stat-number { font-size: 2rem; }
+}

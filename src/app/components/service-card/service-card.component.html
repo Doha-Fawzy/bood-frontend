@@ -1,0 +1,20 @@
+<article class="service-card">
+  <div class="card-image-wrapper" *ngIf="service.imageUrl">
+    <img [src]="service.imageUrl" [alt]="service.title" class="service-card-image" />
+  </div>
+  
+  <div class="card-content">
+    <div class="icon-container" *ngIf="!service.imageUrl">
+      <img [src]="'assets/bood-design/icons/icon-' + (service.iconName || service.category.toLowerCase()) + '.svg'" 
+           [alt]="service.title + ' Icon'" 
+           class="service-icon" />
+    </div>
+    
+    <h3 class="service-title">{{ service.title }}</h3>
+    <p class="service-description">{{ service.description }}</p>
+    
+    <button class="service-action-btn" [attr.aria-label]="'Explore ' + service.title">
+      <span class="icon-plus">+</span>
+    </button>
+  </div>
+</article>

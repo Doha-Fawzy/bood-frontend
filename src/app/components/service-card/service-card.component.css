@@ -1,0 +1,115 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.service-card-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 22, 21, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--bood-light);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .icon-container {
+  border-color: var(--bood-accent);
+  box-shadow: 0 10px 25px rgba(212, 192, 168, 0.2);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.service-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--bood-dark);
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.service-action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bood-dark);
+  color: var(--bood-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+  margin-top: auto;
+}
+
+.service-card:hover .service-action-btn {
+  background: var(--bood-accent);
+  color: var(--bood-dark);
+  transform: rotate(90deg);
+}

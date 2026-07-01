@@ -1,0 +1,87 @@
+<div class="service-page">
+  <!-- Header Section -->
+  <header class="service-header">
+    <div class="header-bg" style="background-image: url('assets/bood-design/images/expertise-bg.png');"></div>
+    <div class="header-overlay"></div>
+    <div class="container header-content">
+      <h1 class="page-title">{{ categoryName | titlecase }} Services</h1>
+      <p class="breadcrumb"><a routerLink="/">Home</a> / Services / {{ categoryName | titlecase }}</p>
+    </div>
+  </header>
+
+  <!-- Content Section -->
+  <section class="content-section">
+    <div class="interior-container">
+      
+      <!-- Top Content: Rich Text & Advantages -->
+      <div class="top-content text-center">
+        <h2 class="content-title">Available Services in {{ categoryName | titlecase }}</h2>
+        <div class="divider center-divider"></div>
+        <p class="lead-text center-lead">
+          Explore our {{ categoryName }} offerings. We tailor our integrated facility management and services to meet the unique operational demands of your sector.
+        </p>
+
+        <!-- Horizontal Key Advantages -->
+        <div class="key-advantages-row">
+          <div class="advantage-item-hz">
+            <span class="icon">✓</span>
+            <div>
+              <h5>Certified Experts</h5>
+              <p>Highly trained professionals.</p>
+            </div>
+          </div>
+          
+          <div class="advantage-item-hz">
+            <span class="icon">✓</span>
+            <div>
+              <h5>Rapid Response</h5>
+              <p>Teams ready to address issues.</p>
+            </div>
+          </div>
+          
+          <div class="advantage-item-hz">
+            <span class="icon">✓</span>
+            <div>
+              <h5>Seamless Integration</h5>
+              <p>An extension of your team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- API States -->
+      <div *ngIf="isLoading" class="loading-state">
+        <p>Loading services from the database...</p>
+      </div>
+
+      <div *ngIf="error" class="error-state">
+        <p>{{ error }}</p>
+        <p style="font-size: 0.85rem; color: #777;">Hint: Ensure the ASP.NET Core API is running on port 5018 and has data.</p>
+      </div>
+
+      <!-- Services Grid (Full Width) -->
+      <div *ngIf="!isLoading && !error && services.length > 0" class="services-dynamic-grid">
+        @for (svc of services; track svc.id) {
+          <app-service-card [service]="svc"></app-service-card>
+        }
+      </div>
+      
+      <div *ngIf="!isLoading && !error && services.length === 0" class="empty-state">
+        <p>No services found in this category yet.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="interior-container text-center">
+      <h2>Ready to elevate your spaces?</h2>
+      <p>Contact our experts today to discuss your specific {{ categoryName }} needs.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/201099061526" class="btn-primary whatsapp-btn" target="_blank">Contact via WhatsApp</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dohasaeed2003@gmail.com&su=Inquiry%20regarding%20Facility%20Management" class="btn-outline" target="_blank" rel="noopener noreferrer">Email Us</a>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,233 @@
+/* Container sizing */
+.interior-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header Section */
+.service-header {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  color: var(--text-on-dark);
+  margin-bottom: 5rem;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  filter: blur(4px);
+  transform: scale(1.02);
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(24, 22, 21, 0.7);
+  z-index: -1;
+}
+
+.header-content {
+  padding-top: 80px;
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(248, 246, 243, 0.7);
+}
+
+.breadcrumb a {
+  color: var(--bood-accent);
+  text-decoration: none;
+}
+
+/* Content Section */
+.content-section {
+  padding-bottom: 6rem;
+}
+
+.top-content {
+  margin-bottom: 4rem;
+  color: var(--bood-dark);
+}
+
+.content-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--bood-accent);
+  margin-bottom: 2rem;
+}
+
+.center-divider {
+  margin: 0 auto 2rem auto;
+}
+
+.lead-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 2.5rem;
+}
+
+.center-lead {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+/* API Data States */
+.loading-state, .error-state, .empty-state {
+  padding: 2rem;
+  background-color: rgba(24, 22, 21, 0.03);
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error-state {
+  color: #d9534f;
+  background-color: rgba(217, 83, 79, 0.05);
+  border-left: 4px solid #d9534f;
+}
+
+/* Dynamic Grid for Cards */
+.services-dynamic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+  align-items: stretch;
+}
+
+/* Horizontal Advantages Row */
+.key-advantages-row {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  background-color: rgba(24, 22, 21, 0.02);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(24, 22, 21, 0.03);
+}
+
+.advantage-item-hz {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  max-width: 250px;
+}
+
+.advantage-item-hz .icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--bood-accent);
+  color: var(--bood-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.advantage-item-hz h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: var(--bood-dark);
+  font-weight: 600;
+}
+
+.advantage-item-hz p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: var(--bood-dark-secondary);
+  color: var(--text-on-dark);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.cta-section p {
+  color: rgba(248, 246, 243, 0.7);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-on-dark);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--bood-accent);
+  color: var(--bood-accent);
+}
+
+.whatsapp-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .page-title { font-size: 2.8rem; }
+  .service-header { height: 350px; margin-bottom: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .services-dynamic-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+  .cta-actions { flex-direction: column; }
+  .info-box { padding: 1.5rem; }
+}
