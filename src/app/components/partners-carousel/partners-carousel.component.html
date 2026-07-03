@@ -1,0 +1,25 @@
+<section class="partners-section">
+  <div class="container text-center">
+    <h2 class="section-title">{{ 'HOME.PARTNERS.TITLE' | translate }}</h2>
+    
+    <div class="marquee-container" dir="ltr">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          @for (logo of partners; track $index) {
+            <div class="partner-card">
+              <img [src]="logo" [alt]="'Partner ' + ($index + 1)" class="partner-logo" onerror="this.src='assets/bood-design/images/logo-image.svg'">
+            </div>
+          }
+        </div>
+        <!-- Duplicated set for infinite seamless scrolling -->
+        <div class="marquee-group" aria-hidden="true">
+          @for (logo of partners; track $index) {
+            <div class="partner-card">
+              <img [src]="logo" [alt]="'Partner ' + ($index + 1)" class="partner-logo" onerror="this.src='assets/bood-design/images/logo-image.svg'">
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

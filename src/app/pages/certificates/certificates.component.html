@@ -1,0 +1,27 @@
+<div class="certificates-page">
+  <!-- Hero Section -->
+  <header class="certs-hero">
+    <div class="hero-bg" style="background-image: url('assets/bood-design/images/expertise-bg.png');"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <h1 class="hero-title">{{ 'CERTIFICATES_PAGE.HERO_TITLE' | translate }}</h1>
+      <p class="hero-subtitle">{{ 'CERTIFICATES_PAGE.HERO_SUBTITLE' | translate }}</p>
+    </div>
+  </header>
+
+  <!-- Certificates Grid -->
+  <section class="certs-grid-section container">
+    <div class="section-heading text-center">
+      <h2>{{ 'CERTIFICATES_PAGE.HEADING' | translate }}</h2>
+      <div class="divider center-divider"></div>
+    </div>
+    
+    <div class="certs-grid">
+      @for (cert of certificates; track $index) {
+        <div class="cert-card">
+          <img [src]="cert" [alt]="'Certificate ' + ($index + 1)" class="cert-img" />
+        </div>
+      }
+    </div>
+  </section>
+</div>

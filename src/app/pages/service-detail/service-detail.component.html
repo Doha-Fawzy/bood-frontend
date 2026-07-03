@@ -1,11 +1,12 @@
 <div class="service-page">
   <!-- Header Section -->
   <header class="service-header">
-    <div class="header-bg" style="background-image: url('assets/bood-design/images/expertise-bg.png');"></div>
+    <div class="header-bg" style="background-image: url('assets/bood-design/images/bood-service-4.jpg');"></div>
     <div class="header-overlay"></div>
     <div class="container header-content">
-      <h1 class="page-title">{{ categoryName | titlecase }} Services</h1>
-      <p class="breadcrumb"><a routerLink="/">Home</a> / Services / {{ categoryName | titlecase }}</p>
+      <h1 class="page-title">{{ 'SERVICES_PAGE.CATEGORIES.' + getCategoryKey(categoryName) + '.TITLE' | translate }}</h1>
+      <p class="hero-tagline" style="font-size: 1.2rem; color: #E8C344; margin-bottom: 15px; font-weight: 500; letter-spacing: 1px;">{{ 'SERVICE_DETAIL.HERO_TAGLINE' | translate }}</p>
+      <p class="breadcrumb"><a routerLink="/">{{ 'SERVICE_DETAIL.BREADCRUMB_HOME' | translate }}</a> / {{ 'SERVICE_DETAIL.BREADCRUMB_SERVICES' | translate }} / {{ 'SERVICES_PAGE.CATEGORIES.' + getCategoryKey(categoryName) + '.TITLE' | translate }}</p>
     </div>
   </header>
 
@@ -15,10 +16,10 @@
       
       <!-- Top Content: Rich Text & Advantages -->
       <div class="top-content text-center">
-        <h2 class="content-title">Available Services in {{ categoryName | titlecase }}</h2>
+        <h2 class="content-title">{{ 'SERVICE_DETAIL.AVAILABLE_SERVICES_IN' | translate }} {{ 'SERVICES_PAGE.CATEGORIES.' + getCategoryKey(categoryName) + '.TITLE' | translate }}</h2>
         <div class="divider center-divider"></div>
         <p class="lead-text center-lead">
-          Explore our {{ categoryName }} offerings. We tailor our integrated facility management and services to meet the unique operational demands of your sector.
+          {{ 'SERVICE_DETAIL.EXPLORE_OUR' | translate }} {{ 'SERVICES_PAGE.CATEGORIES.' + getCategoryKey(categoryName) + '.TITLE' | translate }} {{ 'SERVICE_DETAIL.OFFERINGS_DESC' | translate }}
         </p>
 
         <!-- Horizontal Key Advantages -->
@@ -26,24 +27,24 @@
           <div class="advantage-item-hz">
             <span class="icon">✓</span>
             <div>
-              <h5>Certified Experts</h5>
-              <p>Highly trained professionals.</p>
+              <h5>{{ 'SERVICE_DETAIL.ADVANTAGES.ADV_1_TITLE' | translate }}</h5>
+              <p>{{ 'SERVICE_DETAIL.ADVANTAGES.ADV_1_DESC' | translate }}</p>
             </div>
           </div>
           
           <div class="advantage-item-hz">
             <span class="icon">✓</span>
             <div>
-              <h5>Rapid Response</h5>
-              <p>Teams ready to address issues.</p>
+              <h5>{{ 'SERVICE_DETAIL.ADVANTAGES.ADV_2_TITLE' | translate }}</h5>
+              <p>{{ 'SERVICE_DETAIL.ADVANTAGES.ADV_2_DESC' | translate }}</p>
             </div>
           </div>
           
           <div class="advantage-item-hz">
             <span class="icon">✓</span>
             <div>
-              <h5>Seamless Integration</h5>
-              <p>An extension of your team.</p>
+              <h5>{{ 'SERVICE_DETAIL.ADVANTAGES.ADV_3_TITLE' | translate }}</h5>
+              <p>{{ 'SERVICE_DETAIL.ADVANTAGES.ADV_3_DESC' | translate }}</p>
             </div>
           </div>
         </div>
@@ -51,12 +52,12 @@
       
       <!-- API States -->
       <div *ngIf="isLoading" class="loading-state">
-        <p>Loading services from the database...</p>
+        <p>{{ 'SERVICE_DETAIL.LOADING' | translate }}</p>
       </div>
 
       <div *ngIf="error" class="error-state">
         <p>{{ error }}</p>
-        <p style="font-size: 0.85rem; color: #777;">Hint: Ensure the ASP.NET Core API is running on port 5018 and has data.</p>
+        <p style="font-size: 0.85rem; color: #777;">{{ 'SERVICE_DETAIL.HINT' | translate }}</p>
       </div>
 
       <!-- Services Grid (Full Width) -->
@@ -67,7 +68,7 @@
       </div>
       
       <div *ngIf="!isLoading && !error && services.length === 0" class="empty-state">
-        <p>No services found in this category yet.</p>
+        <p>{{ 'SERVICE_DETAIL.EMPTY' | translate }}</p>
       </div>
 
     </div>
@@ -76,11 +77,11 @@
   <!-- Call to Action -->
   <section class="cta-section">
     <div class="interior-container text-center">
-      <h2>Ready to elevate your spaces?</h2>
-      <p>Contact our experts today to discuss your specific {{ categoryName }} needs.</p>
+      <h2>{{ 'SERVICE_DETAIL.CTA_TITLE' | translate }}</h2>
+      <p>{{ 'SERVICE_DETAIL.CTA_DESC_START' | translate }} {{ 'SERVICES_PAGE.CATEGORIES.' + getCategoryKey(categoryName) + '.TITLE' | translate }} {{ 'SERVICE_DETAIL.CTA_DESC_END' | translate }}</p>
       <div class="cta-actions">
-        <a href="https://wa.me/201099061526" class="btn-primary whatsapp-btn" target="_blank">Contact via WhatsApp</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dohasaeed2003@gmail.com&su=Inquiry%20regarding%20Facility%20Management" class="btn-outline" target="_blank" rel="noopener noreferrer">Email Us</a>
+        <a href="https://wa.me/966581838925" class="btn-primary whatsapp-btn" target="_blank">{{ 'SERVICE_DETAIL.BTN_WHATSAPP' | translate }}</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Info@bood.sa&su=Inquiry%20regarding%20Facility%20Management" class="btn-outline" target="_blank" rel="noopener noreferrer">{{ 'SERVICE_DETAIL.BTN_EMAIL' | translate }}</a>
       </div>
     </div>
   </section>

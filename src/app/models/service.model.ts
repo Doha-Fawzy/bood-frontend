@@ -1,7 +1,9 @@
 export interface Service {
   id: number;
-  title: string;
-  description: string;
+  titleEn: string;
+  titleAr: string;
+  descriptionEn: string;
+  descriptionAr: string;
   category: string;
   iconName?: string;
   imageUrl?: string;

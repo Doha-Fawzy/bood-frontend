@@ -3,13 +3,11 @@
     
     <!-- Left Content -->
     <div class="content-col">
-      <h5 class="section-kicker">OUR WORK</h5>
-      <h2 class="section-title">Spaces We Elevate<br>Daily.</h2>
+      <h5 class="section-kicker">{{ 'HOME.OUR_WORK.KICKER' | translate }}</h5>
+      <h2 class="section-title" [innerHTML]="'HOME.OUR_WORK.TITLE' | translate"></h2>
       <div class="divider"></div>
       
-      <a href="#" class="explore-link">
-        Explore Our Work <span class="arrow">→</span>
-      </a>
+      <a href="#" class="explore-link" [innerHTML]="'HOME.OUR_WORK.EXPLORE_BTN' | translate"></a>
     </div>
 
     <!-- Right Gallery Carousel -->

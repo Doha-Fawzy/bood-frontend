@@ -3,8 +3,8 @@
   <div class="pre-footer">
     <div class="pre-footer-overlay"></div>
     <div class="container pre-footer-content">
-      <h2 class="cta-title">Let's Create Exceptional<br>Experiences, Together.</h2>
-      <a routerLink="/contact" class="btn-primary">Get In Touch</a>
+      <h2 class="cta-title">{{ 'FOOTER.PRE_TITLE_1' | translate }}<br>{{ 'FOOTER.PRE_TITLE_2' | translate }}</h2>
+      <a routerLink="/contact" class="btn-primary">{{ 'FOOTER.PRE_BTN' | translate }}</a>
     </div>
   </div>
 
@@ -13,9 +13,9 @@
     <div class="brand-col">
       <img src="assets/bood-design/images/logo-image.svg" alt="Bood Logo" class="footer-logo" />
       <p class="brand-tagline">
-        Elevating spaces.<br>
-        Enriching experiences.<br>
-        Every detail matters.
+        {{ 'FOOTER.BRAND_TAGLINE_1' | translate }}<br>
+        {{ 'FOOTER.BRAND_TAGLINE_2' | translate }}<br>
+        {{ 'FOOTER.BRAND_TAGLINE_3' | translate }}
       </p>
       <div class="social-links">
         <a href="#" aria-label="LinkedIn" class="social-icon">IN</a>
@@ -24,56 +24,39 @@
       </div>
     </div>
 
-    <div class="links-col">
-      <h4>COMPANY</h4>
-      <ul>
-        <li><a routerLink="/about">About Us</a></li>
-        <li><a routerLink="/work">Our Work</a></li>
-        <li><a routerLink="/careers">Careers</a></li>
-        <li><a routerLink="/insights">Insights</a></li>
-      </ul>
-    </div>
 
-    <div class="links-col">
-      <h4>SERVICES</h4>
-      <ul>
-        <li><a routerLink="/services/hospitality">Hospitality</a></li>
-        <li><a routerLink="/services/cleaning">Cleaning</a></li>
-        <li><a routerLink="/services/maintenance">Maintenance</a></li>
-        <li><a routerLink="/services/landscaping">Landscaping</a></li>
-        <li><a routerLink="/services/support">Support Services</a></li>
-      </ul>
-    </div>
-    
-    <div class="links-col">
-      <h4>SECTORS</h4>
-      <ul>
-        <li><a routerLink="/sectors/corporate">Corporate Offices</a></li>
-        <li><a routerLink="/sectors/hospitality">Hospitality & Hotels</a></li>
-        <li><a routerLink="/sectors/healthcare">Healthcare</a></li>
-        <li><a routerLink="/sectors/education">Education</a></li>
-      </ul>
-    </div>
-
-    <div class="contact-col">
-      <h4>CONTACT</h4>
-      <address>
-        <p>Riyadh, Kingdom of Saudi Arabia</p>
-        <a href="tel:+966111234567" class="contact-link phone">
-          +966 11 123 4567
-        </a>
-        <a href="mailto:info@bood.com.sa" class="contact-link email">
-          info&#64;bood.com.sa
-        </a>
-      </address>
+    <div class="footer-right-group">
+      <div class="links-col">
+        <h4>{{ 'FOOTER.SERVICES_HEADING' | translate }}</h4>
+        <ul>
+          <li><a routerLink="/services/hospitality">{{ 'FOOTER.SERVICES.HOSPITALITY' | translate }}</a></li>
+          <li><a routerLink="/services/cleaning">{{ 'FOOTER.SERVICES.CLEANING' | translate }}</a></li>
+          <li><a routerLink="/services/maintenance">{{ 'FOOTER.SERVICES.MAINTENANCE' | translate }}</a></li>
+          <li><a routerLink="/services/landscaping">{{ 'FOOTER.SERVICES.LANDSCAPING' | translate }}</a></li>
+          <li><a routerLink="/services/support">{{ 'FOOTER.SERVICES.SUPPORT' | translate }}</a></li>
+        </ul>
+      </div>
+      
+      <div class="contact-col">
+        <h4>{{ 'FOOTER.CONTACT_HEADING' | translate }}</h4>
+        <address>
+          <p>{{ 'FOOTER.LOCATION' | translate }}</p>
+          <a href="https://wa.me/966581838925" target="_blank" class="contact-link phone">
+            +966 58 183 8925
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Info@bood.sa&su=Inquiry" target="_blank" rel="noopener noreferrer" class="contact-link email">
+            Info&#64;bood.sa
+          </a>
+        </address>
+      </div>
     </div>
   </div>
   
   <div class="footer-bottom container">
-    <p>© 2024 Bood. All rights reserved.</p>
+    <p>{{ 'FOOTER.COPYRIGHT' | translate }}</p>
     <div class="legal-links">
-      <a routerLink="/privacy">Privacy Policy</a>
-      <a routerLink="/terms">Terms & Conditions</a>
+      <a routerLink="/privacy">{{ 'FOOTER.PRIVACY' | translate }}</a>
+      <a routerLink="/terms">{{ 'FOOTER.TERMS' | translate }}</a>
     </div>
   </div>
 </footer>

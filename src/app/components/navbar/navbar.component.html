@@ -8,10 +8,16 @@
 
       <!-- Desktop Links -->
       <ul class="nav-links">
-        <li><a routerLink="/why-us">Why Us?</a></li>
-        <li><a routerLink="/services">Services</a></li>
-        <li><a routerLink="/contact">Contact Us</a></li>
+        <li><a routerLink="/why-us">{{ 'NAV.WHY_US' | translate }}</a></li>
+        <li><a routerLink="/services">{{ 'NAV.SERVICES' | translate }}</a></li>
+        <li><a routerLink="/certificates">{{ 'NAV.CERTIFICATES' | translate }}</a></li>
+        <li><a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a></li>
       </ul>
+      
+      <!-- Language Toggle Button -->
+      <button class="lang-toggle" (click)="toggleLang()">
+        {{ languageService.currentLang === 'en' ? 'AR' : 'EN' }}
+      </button>
     </nav>
   </div>
 </header>

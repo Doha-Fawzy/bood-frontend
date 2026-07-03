@@ -1,19 +1,19 @@
 <article class="service-card">
   <div class="card-image-wrapper" *ngIf="service.imageUrl">
-    <img [src]="service.imageUrl" [alt]="service.title" class="service-card-image" />
+    <img [src]="formattedImageUrl" [alt]="languageService.currentLang === 'ar' ? service?.titleAr : service?.titleEn" class="service-card-image" />
   </div>
   
   <div class="card-content">
     <div class="icon-container" *ngIf="!service.imageUrl">
       <img [src]="'assets/bood-design/icons/icon-' + (service.iconName || service.category.toLowerCase()) + '.svg'" 
-           [alt]="service.title + ' Icon'" 
+           [alt]="(languageService.currentLang === 'ar' ? service?.titleAr : service?.titleEn) + ' Icon'" 
            class="service-icon" />
     </div>
     
-    <h3 class="service-title">{{ service.title }}</h3>
-    <p class="service-description">{{ service.description }}</p>
+    <h3 class="service-title">{{ languageService.currentLang === 'ar' ? service.titleAr : service.titleEn }}</h3>
+    <p class="service-description">{{ languageService.currentLang === 'ar' ? service.descriptionAr : service.descriptionEn }}</p>
     
-    <button class="service-action-btn" [attr.aria-label]="'Explore ' + service.title">
+    <button class="service-action-btn" [attr.aria-label]="'Explore ' + service.titleEn">
       <span class="icon-plus">+</span>
     </button>
   </div>

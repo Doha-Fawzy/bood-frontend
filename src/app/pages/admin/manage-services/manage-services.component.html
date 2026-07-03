@@ -1,0 +1,50 @@
+<div class="manage-services-container">
+  <div class="page-header">
+    <h2>Manage Services</h2>
+    <a routerLink="/admin/services/new" class="btn-primary">
+      <span class="icon">+</span> Add New Service
+    </a>
+  </div>
+
+  <div class="table-card">
+    <div *ngIf="isLoading" class="loading-state">
+      <span class="loader"></span>
+      <p>Loading services...</p>
+    </div>
+
+    <div *ngIf="services$ | async as services" class="table-responsive">
+      <table class="bood-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of services; let i = index">
+            <td>#{{ i + 1 }}</td>
+            <td>
+              <div class="img-preview" [style.backgroundImage]="'url(' + getFormattedImageUrl(service.imageUrl) + ')'"></div>
+            </td>
+            <td class="font-heading">{{ service.titleEn }}</td>
+            <td><span class="badge">{{ service.category }}</span></td>
+            <td class="actions-cell">
+              <a [routerLink]="['/admin/services/edit', service.id]" class="btn-icon edit-btn" title="Edit">
+                ✏️
+              </a>
+              <button (click)="deleteService(service.id)" class="btn-icon delete-btn" title="Delete">
+                🗑️
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="services.length === 0">
+            <td colspan="5" class="empty-state">No services found. Add one to get started!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

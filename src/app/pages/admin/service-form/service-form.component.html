@@ -1,0 +1,130 @@
+<div class="form-container">
+  <div class="page-header">
+    <h2>{{ isEditMode ? 'Edit Service' : 'Add New Service' }}</h2>
+    <a routerLink="/admin/services" class="btn-outline">
+      Back to List
+    </a>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-state">
+    <span class="loader"></span>
+    <p>Loading data...</p>
+  </div>
+
+  <div *ngIf="showSuccessMessage" class="success-alert">
+    <span class="icon">✅</span> Service saved successfully! Redirecting...
+  </div>
+
+  <div *ngIf="!isLoading" class="form-card">
+    <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()" class="admin-form">
+      
+      <div class="form-group">
+        <label for="titleEn">Service Title (English)</label>
+        <input 
+          type="text" 
+          id="titleEn" 
+          formControlName="titleEn" 
+          placeholder="e.g., Luxury Hotel Operations">
+        <div class="error-msg" *ngIf="serviceForm.get('titleEn')?.invalid && serviceForm.get('titleEn')?.touched">
+          English Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="titleAr">Service Title (Arabic)</label>
+        <input 
+          type="text" 
+          id="titleAr" 
+          formControlName="titleAr" 
+          placeholder="e.g., إدارة عمليات الفنادق الفاخرة">
+        <div class="error-msg" *ngIf="serviceForm.get('titleAr')?.invalid && serviceForm.get('titleAr')?.touched">
+          Arabic Title is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" formControlName="category">
+          <option *ngFor="let cat of categories" [value]="cat.value">{{ cat.label }}</option>
+        </select>
+        <div class="error-msg" *ngIf="serviceForm.get('category')?.invalid && serviceForm.get('category')?.touched">
+          Category is required.
+        </div>
+      </div>
+
+      <div class="form-group image-upload-group">
+        <label>Service Image</label>
+        
+        <div 
+          class="drop-zone" 
+          [class.drag-active]="isDragging"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+          (click)="fileInput.click()">
+          
+          <input 
+            type="file" 
+            #fileInput 
+            (change)="onFileSelected($event)" 
+            accept="image/*" 
+            style="display: none;">
+            
+          <div *ngIf="!serviceForm.get('imageUrl')?.value && !isUploading" class="drop-zone-content">
+            <span class="upload-icon">📸</span>
+            <p>Drag & Drop an image here, or <strong>click to select</strong></p>
+          </div>
+          
+          <div *ngIf="isUploading" class="uploading-state">
+            <span class="loader small-loader"></span>
+            <p>Uploading...</p>
+          </div>
+          
+          <div *ngIf="serviceForm.get('imageUrl')?.value && !isUploading" class="image-preview">
+            <img [src]="serviceForm.get('imageUrl')?.value" alt="Service Preview">
+            <div class="preview-overlay">
+              <span>Change Image</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="error-msg" *ngIf="uploadError">{{ uploadError }}</div>
+        <div class="error-msg" *ngIf="serviceForm.get('imageUrl')?.invalid && serviceForm.get('imageUrl')?.touched">
+          Image is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descriptionEn">Description (English)</label>
+        <textarea 
+          id="descriptionEn" 
+          formControlName="descriptionEn" 
+          rows="4"
+          placeholder="Detailed description of the service in English..."></textarea>
+        <div class="error-msg" *ngIf="serviceForm.get('descriptionEn')?.invalid && serviceForm.get('descriptionEn')?.touched">
+          English Description is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descriptionAr">Description (Arabic)</label>
+        <textarea 
+          id="descriptionAr" 
+          formControlName="descriptionAr" 
+          rows="4"
+          placeholder="Detailed description of the service in Arabic..."></textarea>
+        <div class="error-msg" *ngIf="serviceForm.get('descriptionAr')?.invalid && serviceForm.get('descriptionAr')?.touched">
+          Arabic Description is required.
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" [disabled]="serviceForm.invalid || isSaving">
+          <span *ngIf="!isSaving">{{ isEditMode ? 'Update Service' : 'Save Service' }}</span>
+          <span *ngIf="isSaving" class="loader small-loader"></span>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

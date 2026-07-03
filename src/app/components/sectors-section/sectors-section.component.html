@@ -3,43 +3,41 @@
     
     <!-- Left Content -->
     <div class="content-col">
-      <h5 class="section-kicker">WHERE WE SERVE</h5>
-      <h2 class="section-title">Expertise Across<br>Diverse Environments.</h2>
+      <h5 class="section-kicker">{{ 'HOME.SECTORS.KICKER' | translate }}</h5>
+      <h2 class="section-title" [innerHTML]="'HOME.SECTORS.TITLE' | translate"></h2>
       <div class="divider"></div>
       <p class="section-desc">
-        We tailor our integrated facility management and hospitality services to meet the unique operational demands of various sectors.
+        {{ 'HOME.SECTORS.DESC' | translate }}
       </p>
       
       <div class="sectors-grid">
         <div class="sector-item">
           <img src="assets/bood-design/icons/icon-corporate.svg" alt="Corporate" class="sector-icon-img">
-          <span class="sector-text">Corporate Offices</span>
+          <span class="sector-text">{{ 'HOME.SECTORS.CORPORATE' | translate }}</span>
         </div>
         <div class="sector-item">
           <img src="assets/bood-design/icons/icon-hospitality.svg" alt="Hospitality" class="sector-icon-img">
-          <span class="sector-text">Hospitality & Hotels</span>
+          <span class="sector-text">{{ 'HOME.SECTORS.HOSPITALITY' | translate }}</span>
         </div>
         <div class="sector-item">
           <img src="assets/bood-design/icons/icon-healthcare.svg" alt="Healthcare" class="sector-icon-img">
-          <span class="sector-text">Healthcare Facilities</span>
+          <span class="sector-text">{{ 'HOME.SECTORS.HEALTHCARE' | translate }}</span>
         </div>
         <div class="sector-item">
           <img src="assets/bood-design/icons/icon-education.svg" alt="Education" class="sector-icon-img">
-          <span class="sector-text">Educational Campuses</span>
+          <span class="sector-text">{{ 'HOME.SECTORS.EDUCATION' | translate }}</span>
         </div>
         <div class="sector-item">
           <img src="assets/bood-design/icons/icon-retail.svg" alt="Retail" class="sector-icon-img">
-          <span class="sector-text">Retail & Malls</span>
+          <span class="sector-text">{{ 'HOME.SECTORS.RETAIL' | translate }}</span>
         </div>
         <div class="sector-item">
           <img src="assets/bood-design/icons/icon-industrial.svg" alt="Industrial" class="sector-icon-img">
-          <span class="sector-text">Industrial & Logistics</span>
+          <span class="sector-text">{{ 'HOME.SECTORS.INDUSTRIAL' | translate }}</span>
         </div>
       </div>
       
-      <a href="#" class="explore-link">
-        View All Sectors <span class="arrow">→</span>
-      </a>
+      <a href="#" class="explore-link" [innerHTML]="'HOME.SECTORS.EXPLORE_BTN' | translate"></a>
     </div>
 
     <!-- Right Image -->

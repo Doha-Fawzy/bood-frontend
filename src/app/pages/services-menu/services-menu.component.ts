@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-services-menu',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslatePipe],
   templateUrl: './services-menu.component.html',
   styleUrl: './services-menu.component.css'
 })
 export class ServicesMenuComponent {
   categories = [
-    { name: 'Hospitality', path: 'hospitality', description: 'Comprehensive management for 5-star properties ensuring every touchpoint reflects excellence and luxury.' },
-    { name: 'Cleaning', path: 'cleaning', description: 'Intensive sanitation and premium cleaning solutions to maintain pristine environments for your staff and clients.' },
-    { name: 'Maintenance', path: 'maintenance', description: 'Scheduled preventative maintenance and rapid response to ensure uninterrupted operations.' },
-    { name: 'Landscaping', path: 'landscaping', description: 'Designing, beautifying, and meticulously maintaining outdoor environments and green spaces.' },
-    { name: 'Support Services', path: 'supportservices', description: 'Essential administrative and operational support working as a seamless extension of your team.' }
+    { name: 'SERVICES_PAGE.CATEGORIES.HOSPITALITY.TITLE', path: 'hospitality', description: 'SERVICES_PAGE.CATEGORIES.HOSPITALITY.DESC', image: 'assets/bood-design/images/cat-hospitality.jpeg' },
+    { name: 'SERVICES_PAGE.CATEGORIES.CLEANING.TITLE', path: 'cleaning', description: 'SERVICES_PAGE.CATEGORIES.CLEANING.DESC', image: 'assets/bood-design/images/cat-cleaning.jpeg' },
+    { name: 'SERVICES_PAGE.CATEGORIES.MAINTENANCE.TITLE', path: 'maintenance', description: 'SERVICES_PAGE.CATEGORIES.MAINTENANCE.DESC', image: 'assets/bood-design/images/cat-maintenance.jpeg' },
+    { name: 'SERVICES_PAGE.CATEGORIES.LANDSCAPING.TITLE', path: 'landscaping', description: 'SERVICES_PAGE.CATEGORIES.LANDSCAPING.DESC', image: 'assets/bood-design/images/expertise-bg.png' },
+    { name: 'SERVICES_PAGE.CATEGORIES.SUPPORT.TITLE', path: 'supportservices', description: 'SERVICES_PAGE.CATEGORIES.SUPPORT.DESC', image: 'assets/bood-design/images/cat-support.jpeg' }
   ];
 }

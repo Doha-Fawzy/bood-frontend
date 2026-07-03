@@ -4,6 +4,7 @@
   min-height: 800px;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: var(--text-on-dark);
   overflow: hidden;
 }
@@ -33,6 +34,8 @@
 .hero-content {
   padding-top: 120px; /* Offset for navbar */
   max-width: 700px;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .hero-title {

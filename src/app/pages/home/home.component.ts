@@ -4,11 +4,12 @@ import { ServicesSectionComponent } from '../../components/services-section/serv
 import { StatsBarComponent } from '../../components/stats-bar/stats-bar.component';
 import { SectorsSectionComponent } from '../../components/sectors-section/sectors-section.component';
 import { OurWorkComponent } from '../../components/our-work/our-work.component';
+import { PartnersCarouselComponent } from '../../components/partners-carousel/partners-carousel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent, ServicesSectionComponent, StatsBarComponent, SectorsSectionComponent, OurWorkComponent],
+  imports: [HeroComponent, ServicesSectionComponent, StatsBarComponent, SectorsSectionComponent, OurWorkComponent, PartnersCarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

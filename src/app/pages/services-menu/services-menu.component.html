@@ -1,10 +1,11 @@
 <div class="menu-page">
   <header class="service-header">
-    <div class="header-bg" style="background-image: url('assets/bood-design/images/expertise-bg.png');"></div>
+    <div class="header-bg" style="background-image: url('assets/bood-design/images/bood-service-4.jpg');"></div>
     <div class="header-overlay"></div>
     <div class="container header-content text-center">
-      <h1 class="page-title">Our Services Directory</h1>
-      <p class="breadcrumb"><a routerLink="/">Home</a> / Services</p>
+      <h1 class="page-title">{{ 'SERVICES_PAGE.HERO_TITLE' | translate }}</h1>
+      <p class="hero-tagline" style="font-size: 1.2rem; color: #E8C344; margin-bottom: 15px; font-weight: 500; letter-spacing: 1px;">{{ 'SERVICES_PAGE.HERO_TAGLINE' | translate }}</p>
+      <p class="breadcrumb"><a routerLink="/">{{ 'SERVICES_PAGE.BREADCRUMB_HOME' | translate }}</a> / {{ 'SERVICES_PAGE.BREADCRUMB_SERVICES' | translate }}</p>
     </div>
   </header>
 
@@ -13,10 +14,13 @@
       <div class="categories-grid">
         @for (cat of categories; track cat.path) {
           <a [routerLink]="['/services', cat.path]" class="category-card">
+            <div class="cat-image-wrapper" *ngIf="cat.image">
+              <img [src]="cat.image" [alt]="cat.name | translate" class="cat-card-img" />
+            </div>
             <div class="cat-content">
-              <h3>{{ cat.name }}</h3>
-              <p>{{ cat.description }}</p>
-              <span class="explore-btn">Explore <span class="arrow">→</span></span>
+              <h3>{{ cat.name | translate }}</h3>
+              <p>{{ cat.description | translate }}</p>
+              <span class="explore-btn" [innerHTML]="'SERVICES_PAGE.EXPLORE_BTN' | translate"></span>
             </div>
           </a>
         }

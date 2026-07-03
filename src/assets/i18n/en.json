@@ -1,0 +1,176 @@
+{
+  "NAV": {
+    "WHY_US": "Why Us?",
+    "SERVICES": "Services",
+    "CONTACT": "Contact Us",
+    "CERTIFICATES": "Certificates"
+  },
+  "HERO": {
+    "TITLE_1": "Crafting",
+    "TITLE_2": "Exceptional",
+    "TITLE_HIGHLIGHT": "Experiences.",
+    "SUBTITLE_1": "Integrated facility management and hospitality",
+    "SUBTITLE_2": "solutions that elevate spaces and enrich lives.",
+    "DISCOVER_BTN": "Discover Bood"
+  },
+  "WHY_US": {
+    "HERO_TITLE": "Why Choose Bood?",
+    "HERO_SUBTITLE": "Elevating standards through intelligent operations and dedicated expertise.",
+    "CORE_STRENGTHS": "Our Core Strengths",
+    "VALUES": {
+      "INTELLIGENT": {
+        "TITLE": "Intelligent Operations",
+        "DESC": "Harnessing AI-driven management and advanced data insights to optimize facility performance seamlessly."
+      },
+      "TAILORED": {
+        "TITLE": "Tailored Solutions",
+        "DESC": "Customized facility management designed to fit the exact operational demands of your unique sector."
+      },
+      "EXPERT": {
+        "TITLE": "Expert Workforce",
+        "DESC": "A team of highly trained, certified professionals dedicated to delivering uncompromising quality."
+      }
+    },
+    "PROCESS": {
+      "HEADING": "Our Proven Process",
+      "STEP_1": "Consultation",
+      "STEP_2": "Digital Analysis",
+      "STEP_3": "Execution",
+      "STEP_4": "Quality Assurance"
+    },
+    "NUMBERS": {
+      "HAPPY_CLIENTS": "Happy Clients",
+      "SUPPORT": "Operational Support",
+      "RESPONSE_TIME": "Average Response Time",
+      "EXPERTS": "Certified Experts"
+    }
+  },
+  "CERTIFICATES_PAGE": {
+    "HERO_TITLE": "Our Certificates",
+    "HERO_SUBTITLE": "Internationally recognized standards of quality and safety.",
+    "HEADING": "Certifications & Compliance"
+  },
+  "STATS": {
+    "YEARS": "Years of Excellence",
+    "PROFESSIONALS": "Dedicated Professionals",
+    "CLIENTS": "Satisfied Clients",
+    "SQ_METERS": "Sq. Meters Managed",
+    "SUPPORT": "Round-the-clock Support"
+  },
+  "CONTACT": {
+    "TITLE": "Get In Touch",
+    "SUBTITLE": "Ready to elevate your facility management? Reach out to our dedicated team today to discuss tailored solutions for your unique operational needs.",
+    "WHATSAPP": {
+      "TITLE": "Chat on WhatsApp",
+      "DESC": "Instant support from our dedicated team.",
+      "ACTION": "Message Us &rarr;"
+    },
+    "EMAIL": {
+      "TITLE": "Email Us",
+      "DESC": "Send us your detailed inquiries.",
+      "ACTION": "Send Email &rarr;"
+    }
+  },
+  "HOME": {
+    "SERVICES": {
+      "KICKER": "WHAT WE DO",
+      "TITLE": "Crafting <span class=\"highlight\">Experiences</span>",
+      "DESC": "From keeping things impeccably clean to ensuring every light stays on, we manage the spaces that matter most to your business.",
+      "EXPLORE_BTN": "Explore Our Services <span class=\"arrow\">→</span>"
+    },
+    "PARTNERS": {
+      "TITLE": "Partners of Success"
+    },
+    "SECTORS": {
+      "KICKER": "WHERE WE SERVE",
+      "TITLE": "Expertise Across<br>Diverse Environments.",
+      "DESC": "We tailor our integrated facility management and hospitality services to meet the unique operational demands of various sectors.",
+      "CORPORATE": "Corporate Offices",
+      "HOSPITALITY": "Hospitality & Hotels",
+      "HEALTHCARE": "Healthcare Facilities",
+      "EDUCATION": "Educational Campuses",
+      "RETAIL": "Retail & Malls",
+      "INDUSTRIAL": "Industrial & Logistics",
+      "EXPLORE_BTN": "View All Sectors <span class=\"arrow\">&rarr;</span>"
+    },
+    "OUR_WORK": {
+      "KICKER": "OUR WORK",
+      "TITLE": "Spaces We Elevate<br>Daily.",
+      "EXPLORE_BTN": "Explore Our Work <span class=\"arrow\">&rarr;</span>"
+    }
+  },
+  "SERVICES_PAGE": {
+    "HERO_TITLE": "Our Services Directory",
+    "HERO_TAGLINE": "Elevating details to create an exceptional experience.",
+    "BREADCRUMB_HOME": "Home",
+    "BREADCRUMB_SERVICES": "Services",
+    "EXPLORE_BTN": "Explore <span class=\"arrow\">&rarr;</span>",
+    "CATEGORIES": {
+      "HOSPITALITY": {
+        "TITLE": "Hospitality",
+        "DESC": "Comprehensive management for 5-star properties ensuring every touchpoint reflects excellence and luxury."
+      },
+      "CLEANING": {
+        "TITLE": "Cleaning",
+        "DESC": "Intensive sanitation and premium cleaning solutions to maintain pristine environments for your staff and clients."
+      },
+      "MAINTENANCE": {
+        "TITLE": "Maintenance",
+        "DESC": "Scheduled preventative maintenance and rapid response to ensure uninterrupted operations."
+      },
+      "LANDSCAPING": {
+        "TITLE": "Landscaping",
+        "DESC": "Designing, beautifying, and meticulously maintaining outdoor environments and green spaces."
+      },
+      "SUPPORT": {
+        "TITLE": "Support Services",
+        "DESC": "Essential administrative and operational support working as a seamless extension of your team."
+      }
+    }
+  },
+  "SERVICE_DETAIL": {
+    "HERO_TAGLINE": "Elevating details to create an exceptional experience.",
+    "BREADCRUMB_HOME": "Home",
+    "BREADCRUMB_SERVICES": "Services",
+    "AVAILABLE_SERVICES_IN": "Available Services in",
+    "EXPLORE_OUR": "Explore our",
+    "OFFERINGS_DESC": "offerings. We tailor our integrated facility management and services to meet the unique operational demands of your sector.",
+    "ADVANTAGES": {
+      "ADV_1_TITLE": "Certified Experts",
+      "ADV_1_DESC": "Highly trained professionals.",
+      "ADV_2_TITLE": "Rapid Response",
+      "ADV_2_DESC": "Teams ready to address issues.",
+      "ADV_3_TITLE": "Seamless Integration",
+      "ADV_3_DESC": "An extension of your team."
+    },
+    "LOADING": "Loading services from the database...",
+    "EMPTY": "No services found in this category yet.",
+    "HINT": "Hint: Ensure the ASP.NET Core API is running on port 5018 and has data.",
+    "CTA_TITLE": "Ready to elevate your spaces?",
+    "CTA_DESC_START": "Contact our experts today to discuss your specific",
+    "CTA_DESC_END": "needs.",
+    "BTN_WHATSAPP": "Contact via WhatsApp",
+    "BTN_EMAIL": "Email Us"
+  },
+  "FOOTER": {
+    "PRE_TITLE_1": "Let's Create Exceptional",
+    "PRE_TITLE_2": "Experiences, Together.",
+    "PRE_BTN": "Get In Touch",
+    "BRAND_TAGLINE_1": "Elevating spaces.",
+    "BRAND_TAGLINE_2": "Enriching experiences.",
+    "BRAND_TAGLINE_3": "Every detail matters.",
+    "SERVICES_HEADING": "SERVICES",
+    "CONTACT_HEADING": "CONTACT",
+    "SERVICES": {
+      "HOSPITALITY": "Hospitality",
+      "CLEANING": "Cleaning",
+      "MAINTENANCE": "Maintenance",
+      "LANDSCAPING": "Landscaping",
+      "SUPPORT": "Support Services"
+    },
+    "LOCATION": "Riyadh, Kingdom of Saudi Arabia",
+    "COPYRIGHT": "© 2026 Bood. All rights reserved.",
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "Terms & Conditions"
+  }
+}

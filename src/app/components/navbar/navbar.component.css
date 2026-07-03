@@ -76,3 +76,52 @@
 @media (max-width: 1024px) {
   .nav-links { display: none; }
 }
+
+/* الترتيب الافتراضي (اللغة الإنجليزية - LTR) */
+.logo {
+  order: 1; /* الترتيب الأول في LTR يعني أقصى اليسار */
+}
+
+.nav-links {
+  order: 2; /* في المنتصف */
+}
+
+.lang-toggle {
+  order: 3; /* الترتيب الأخير في LTR يعني أقصى اليمين */
+  background: transparent;
+  border: 1px solid rgba(248, 246, 243, 0.3);
+  color: #F8F6F3;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.lang-toggle:hover {
+  border-color: var(--bood-accent);
+  color: var(--bood-accent);
+  background: rgba(232, 195, 68, 0.08);
+}
+
+/* -------------------------------------- */
+/* الترتيب المعكوس (اللغة العربية - RTL)  */
+/* -------------------------------------- */
+:host-context([dir="rtl"]) .lang-toggle {
+  order: 1; /* الترتيب الأول في RTL يعني أقصى اليمين */
+}
+
+:host-context([dir="rtl"]) .nav-links {
+  order: 2; /* تظل في المنتصف، وعناصرها الداخلية ستنعكس بشكل طبيعي وصحيح لغوياً */
+}
+
+:host-context([dir="rtl"]) .logo {
+  order: 3; /* الترتيب الأخير في RTL يعني أقصى اليسار */
+}

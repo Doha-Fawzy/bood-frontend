@@ -3,15 +3,13 @@
     
     <!-- Left Column: Header text -->
     <div class="section-header">
-      <h5 class="section-kicker">WHAT WE DO</h5>
-      <h2 class="section-title">One Partner.<br>Every Detail Covered.</h2>
+      <h5 class="section-kicker">{{ 'HOME.SERVICES.KICKER' | translate }}</h5>
+      <h2 class="section-title" [innerHTML]="'HOME.SERVICES.TITLE' | translate"></h2>
       <div class="divider"></div>
       <p class="section-desc">
-        From hospitality and cleaning to maintenance and landscaping, we deliver seamless solutions with precision, care, and consistency.
+        {{ 'HOME.SERVICES.DESC' | translate }}
       </p>
-      <a href="#" class="explore-link">
-        Explore All Services <span class="arrow">→</span>
-      </a>
+      <a href="#" class="explore-link" [innerHTML]="'HOME.SERVICES.EXPLORE_BTN' | translate"></a>
     </div>
 
     <!-- Right Column: Services Cards with Connecting Line -->

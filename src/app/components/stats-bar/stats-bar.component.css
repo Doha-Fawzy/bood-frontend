@@ -1,5 +1,6 @@
 .stats-section {
   background-color: var(--bood-dark-secondary);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
   padding: 4rem 0;
   position: relative;
   z-index: 10;
@@ -8,9 +9,8 @@
 .stats-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch; /* So borders are full height */
   flex-wrap: wrap;
-  gap: 2rem;
 }
 
 .stat-item {
@@ -18,6 +18,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  padding: 1rem;
+  border-right: 1px solid rgba(212, 192, 168, 0.2); /* Very subtle gold line */
+}
+
+.stat-item:last-child {
+  border-right: none;
 }
 
 .stat-icon-img {
@@ -47,7 +54,11 @@
 
 @media (max-width: 992px) {
   .stats-container { justify-content: space-around; }
-  .stat-item { flex: 0 0 30%; margin-bottom: 2rem; }
+  .stat-item { 
+    flex: 0 0 30%; 
+    margin-bottom: 2rem; 
+    border-right: none;
+  }
 }
 
 @media (max-width: 576px) {
