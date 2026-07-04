@@ -4,6 +4,7 @@ import { ServiceDetailComponent } from './pages/service-detail/service-detail.co
 import { ServicesMenuComponent } from './pages/services-menu/services-menu.component';
 import { WhyUsComponent } from './pages/why-us/why-us.component';
 import { CertificatesComponent } from './pages/certificates/certificates.component';
+import { CareersComponent } from './pages/careers/careers.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 import { LoginComponent } from './pages/admin/login/login.component';
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'services/:categoryName', component: ServiceDetailComponent },
   { path: 'why-us', component: WhyUsComponent },
   { path: 'certificates', component: CertificatesComponent },
+  { path: 'careers', component: CareersComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', redirectTo: 'why-us' },
   

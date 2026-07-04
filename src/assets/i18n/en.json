@@ -2,6 +2,7 @@
   "NAV": {
     "WHY_US": "Why Us?",
     "SERVICES": "Services",
+    "CAREERS": "Careers",
     "CONTACT": "Contact Us",
     "CERTIFICATES": "Certificates"
   },
@@ -12,6 +13,13 @@
     "SUBTITLE_1": "Integrated facility management and hospitality",
     "SUBTITLE_2": "solutions that elevate spaces and enrich lives.",
     "DISCOVER_BTN": "Discover Bood"
+  },
+  "CAREERS": {
+    "TITLE": "Join Our Team",
+    "SUBTITLE": "Build your future with Bُ3d.",
+    "GPTW_HEADING": "A Certified Great Place to Work",
+    "GPTW_TEXT": "We are proud to be certified as a Great Place to Work in KSA. We foster an environment of excellence, empowering our dedicated professionals to deliver uncompromising quality in facility management.",
+    "BTN_APPLY": "View Open Positions"
   },
   "WHY_US": {
     "HERO_TITLE": "Why Choose Bood?",

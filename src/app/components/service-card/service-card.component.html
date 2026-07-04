@@ -1,12 +1,12 @@
 <article class="service-card">
   <div class="card-image-wrapper" *ngIf="service.imageUrl">
-    <img [src]="formattedImageUrl" [alt]="languageService.currentLang === 'ar' ? service?.titleAr : service?.titleEn" class="service-card-image" />
+    <img [src]="formattedImageUrl" [alt]="languageService.currentLang === 'ar' ? service.titleAr : service.titleEn" class="service-card-image" />
   </div>
   
   <div class="card-content">
     <div class="icon-container" *ngIf="!service.imageUrl">
       <img [src]="'assets/bood-design/icons/icon-' + (service.iconName || service.category.toLowerCase()) + '.svg'" 
-           [alt]="(languageService.currentLang === 'ar' ? service?.titleAr : service?.titleEn) + ' Icon'" 
+           [alt]="(languageService.currentLang === 'ar' ? service.titleAr : service.titleEn) + ' Icon'" 
            class="service-icon" />
     </div>
     
