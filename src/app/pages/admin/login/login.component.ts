@@ -24,7 +24,7 @@ export class LoginComponent {
     
     this.authService.login(this.credentials).subscribe({
       next: () => {
-        this.router.navigate(['/admin/services']);
+        this.router.navigate(['/manage-bood-secure-2026/services']);
       },
       error: (err) => {
         this.isLoading = false;

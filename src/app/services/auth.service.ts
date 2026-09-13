@@ -29,7 +29,7 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     this.authStatus.next(false);
-    this.router.navigate(['/admin/login']);
+    this.router.navigate(['/manage-bood-secure-2026/login']);
   }
 
   isLoggedIn(): boolean {

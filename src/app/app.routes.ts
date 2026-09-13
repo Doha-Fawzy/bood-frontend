@@ -24,9 +24,9 @@ export const routes: Routes = [
   { path: 'about', redirectTo: 'why-us' },
   
   // Admin Routes
-  { path: 'admin/login', component: LoginComponent },
+  { path: 'manage-bood-secure-2026/login', component: LoginComponent },
   { 
-    path: 'admin', 
+    path: 'manage-bood-secure-2026', 
     component: DashboardComponent,
     canActivate: [AdminGuard],
     children: [

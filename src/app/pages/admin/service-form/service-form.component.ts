@@ -76,7 +76,7 @@ export class ServiceFormComponent implements OnInit {
         console.error('Error loading service', err);
         alert('Failed to load service data.');
         this.isLoading = false;
-        this.router.navigate(['/admin/services']);
+        this.router.navigate(['/manage-bood-secure-2026/services']);
       }
     });
   }
@@ -99,7 +99,7 @@ export class ServiceFormComponent implements OnInit {
           this.isSaving = false;
           this.showSuccessMessage = true;
           setTimeout(() => {
-            this.router.navigate(['/admin/services']);
+            this.router.navigate(['/manage-bood-secure-2026/services']);
           }, 2000);
         },
         error: (err) => {
@@ -120,7 +120,7 @@ export class ServiceFormComponent implements OnInit {
           this.isSaving = false;
           this.showSuccessMessage = true;
           setTimeout(() => {
-            this.router.navigate(['/admin/services']);
+            this.router.navigate(['/manage-bood-secure-2026/services']);
           }, 2000);
         },
         error: (err) => {

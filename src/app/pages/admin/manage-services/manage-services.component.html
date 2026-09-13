@@ -1,7 +1,7 @@
 <div class="manage-services-container">
   <div class="page-header">
     <h2>Manage Services</h2>
-    <a routerLink="/admin/services/new" class="btn-primary">
+    <a routerLink="/manage-bood-secure-2026/services/new" class="btn-primary">
       <span class="icon">+</span> Add New Service
     </a>
   </div>
@@ -32,7 +32,7 @@
             <td class="font-heading">{{ service.titleEn }}</td>
             <td><span class="badge">{{ service.category }}</span></td>
             <td class="actions-cell">
-              <a [routerLink]="['/admin/services/edit', service.id]" class="btn-icon edit-btn" title="Edit">
+              <a [routerLink]="['/manage-bood-secure-2026/services/edit', service.id]" class="btn-icon edit-btn" title="Edit">
                 ✏️
               </a>
               <button (click)="deleteService(service.id)" class="btn-icon delete-btn" title="Delete">

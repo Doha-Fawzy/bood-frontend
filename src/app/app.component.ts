@@ -26,7 +26,7 @@ export class AppComponent {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.isAdminRoute = event.urlAfterRedirects.startsWith('/admin');
+      this.isAdminRoute = event.urlAfterRedirects.startsWith('/manage-bood-secure-2026');
     });
   }
 }
