@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-certificates',
@@ -10,11 +11,11 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './certificates.component.css'
 })
 export class CertificatesComponent {
-  certificates = [
-    'assets/bood-design/images/certificates/cert-1.png',
-    'assets/bood-design/images/certificates/cert-2.png',
-    'assets/bood-design/images/certificates/cert-3.png',
-    'assets/bood-design/images/certificates/cert-4.png'
+  certificates: string[] = [
+    environment.apiUrl + '/uploads/certificates/cert-1.png',
+    environment.apiUrl + '/uploads/certificates/cert-2.png',
+    environment.apiUrl + '/uploads/certificates/cert-3.png',
+    environment.apiUrl + '/uploads/certificates/cert-4.png'
   ];
 
 }

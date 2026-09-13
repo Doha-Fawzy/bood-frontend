@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service.model';
 import { LanguageService } from '../../services/language.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-service-card',
@@ -12,12 +13,30 @@ import { LanguageService } from '../../services/language.service';
 })
 export class ServiceCardComponent {
   @Input({ required: true }) service!: Service;
+  environment = environment;
 
   constructor(public languageService: LanguageService) {}
 
   get formattedImageUrl(): string {
     if (!this.service?.imageUrl) return '';
-    return this.transformGoogleDriveLink(this.service.imageUrl);
+    let url = this.transformGoogleDriveLink(this.service.imageUrl);
+
+    // 1. Remove legacy hardcoded localhost (e.g. http://localhost:5018)
+    if (url.includes('http://localhost:')) {
+      url = url.replace(/http:\/\/localhost:\d+/g, '');
+    }
+
+    // 2. Leave absolute external URLs intact
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+
+    // 3. Prepend backend environment URL to relative paths
+    if (url.startsWith('/')) {
+      return environment.apiUrl + url;
+    }
+
+    return url;
   }
 
   private transformGoogleDriveLink(url: string): string {

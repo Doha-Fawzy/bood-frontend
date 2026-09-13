@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ServiceService } from '../../../services/service.service';
 import { Service } from '../../../models/service.model';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-manage-services',
@@ -52,6 +53,22 @@ export class ManageServicesComponent implements OnInit {
         return `https://drive.google.com/uc?export=view&id=${match[1]}`;
       }
     }
+    
+    // 1. Remove legacy hardcoded localhost
+    if (url.includes('http://localhost:')) {
+      url = url.replace(/http:\/\/localhost:\d+/g, '');
+    }
+    
+    // 2. Leave absolute external URLs intact
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    
+    // 3. Prepend backend environment URL to relative paths
+    if (url.startsWith('/')) {
+      return environment.apiUrl + url;
+    }
+
     return url;
   }
 }

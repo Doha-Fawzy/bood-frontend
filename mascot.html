@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Mascot</title>
+    <style>
+        /* 
+         * Basic Resets and Canvas Setup
+         */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: crosshair; /* Optional: just to see where the real cursor is */
+        }
+
+        /* 
+         * Mascot Container 
+         * Handles the position, scaling (flipping), and smooth movement 
+         */
+        #mascot-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;  /* Adjust based on your actual cropped image size */
+            height: 160px; /* Adjust based on your actual cropped image size */
+            pointer-events: none; /* Prevents the mascot from blocking mouse clicks on other elements */
+            z-index: 9999;
+            transform-origin: center center;
+            will-change: transform; /* Performance optimization for smooth animations */
+        }
+
+        /* 
+         * Mascot Sprite 
+         * Handles the background image toggling for animations
+         */
+        .mascot-sprite {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            transition: background-image 0s; /* Instant swap between frames */
+        }
+
+        /* Idle State */
+        .mascot-sprite.idle {
+            background-image: url('mascot-idle.png');
+        }
+
+        /* Active State Frames */
+        .mascot-sprite.active-1 { background-image: url('mascot-frame1.png'); }
+        .mascot-sprite.active-2 { background-image: url('mascot-frame2.png'); }
+        .mascot-sprite.active-3 { background-image: url('mascot-frame3.png'); }
+        .mascot-sprite.active-4 { background-image: url('mascot-frame4.png'); }
+
+        /* Just some background text for testing */
+        .info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ccc;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="info">
+        <h1>Move your mouse to wake me up!</h1>
+        <p>Ensure mascot-idle.png and mascot-frame1.png to mascot-frame4.png are in the same folder.</p>
+    </div>
+
+    <!-- The Mascot -->
+    <div id="mascot-container">
+        <div id="mascot" class="mascot-sprite idle"></div>
+    </div>
+
+    <script>
+        /**
+         * Interactive Mascot Logic
+         */
+        const mascotContainer = document.getElementById('mascot-container');
+        const mascotSprite = document.getElementById('mascot');
+
+        // Configuration
+        const IDLE_TIMEOUT = 300; // Time in ms before mascot goes to sleep
+        const FRAME_RATE = 120;   // Speed of the animation (ms per frame)
+        const FOLLOW_SPEED = 0.08; // Spring physics lerp factor (0 to 1, higher is faster)
+        
+        // Dimensions (should match CSS width/height to center properly)
+        const MASCOT_WIDTH = 120; 
+        const MASCOT_HEIGHT = 160;
+
+        // State variables
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let currentX = mouseX;
+        let currentY = mouseY;
+        let scaleX = 1; // 1 for right, -1 for left
+        
+        let isIdle = true;
+        let idleTimer = null;
+        let animationInterval = null;
+        let currentFrame = 1;
+
+        // 1. Mouse Tracking & State Toggling
+        window.addEventListener('mousemove', (e) => {
+            // Determine facing direction based on movement
+            if (e.clientX < currentX - 2) {
+                scaleX = -1; // Moving Left
+            } else if (e.clientX > currentX + 2) {
+                scaleX = 1;  // Moving Right
+            }
+
+            // Update target mouse coordinates
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // If we are currently idle, wake up and start animating
+            if (isIdle) {
+                isIdle = false;
+                startActiveAnimation();
+            }
+
+            // Reset the idle countdown timer every time the mouse moves
+            clearTimeout(idleTimer);
+            idleTimer = setTimeout(() => {
+                isIdle = true;
+                stopActiveAnimation();
+            }, IDLE_TIMEOUT);
+        });
+
+        // 2. The Animation (Frame-by-Frame)
+        function startActiveAnimation() {
+            // Set initial active frame
+            mascotSprite.className = 'mascot-sprite active-1';
+            currentFrame = 1;
+            
+            // Clear any existing intervals to avoid overlapping
+            if (animationInterval) clearInterval(animationInterval);
+            
+            // Start the infinite loop through frames 1-4
+            animationInterval = setInterval(() => {
+                currentFrame = currentFrame === 4 ? 1 : currentFrame + 1;
+                mascotSprite.className = `mascot-sprite active-${currentFrame}`;
+            }, FRAME_RATE);
+        }
+
+        function stopActiveAnimation() {
+            // Clear the running animation loop
+            if (animationInterval) {
+                clearInterval(animationInterval);
+                animationInterval = null;
+            }
+            // Revert to idle smiling state
+            mascotSprite.className = 'mascot-sprite idle';
+        }
+
+        // 3. Smooth Chasing (requestAnimationFrame)
+        function updatePosition() {
+            // Linear Interpolation (Lerp) for smooth spring-like follow effect
+            currentX += (mouseX - currentX) * FOLLOW_SPEED;
+            currentY += (mouseY - currentY) * FOLLOW_SPEED;
+
+            // Offset by half width/height so the cursor is in the center of the mascot
+            const offsetX = currentX - (MASCOT_WIDTH / 2);
+            const offsetY = currentY - (MASCOT_HEIGHT / 2);
+
+            // Apply translation and directional flipping
+            mascotContainer.style.transform = `translate(${offsetX}px, ${offsetY}px) scaleX(${scaleX})`;
+
+            // Recursively call for the next frame
+            requestAnimationFrame(updatePosition);
+        }
+
+        // Initialize
+        stopActiveAnimation(); // Start in idle mode
+        updatePosition();      // Kick off the physics loop
+    </script>
+</body>
+</html>

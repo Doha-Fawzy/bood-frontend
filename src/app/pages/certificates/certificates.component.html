@@ -19,7 +19,7 @@
     <div class="certs-grid">
       @for (cert of certificates; track $index) {
         <div class="cert-card">
-          <img [src]="cert" [alt]="'Certificate ' + ($index + 1)" class="cert-img" />
+          <img [src]="cert" [alt]="'Certificate ' + ($index + 1)" class="cert-img" onerror="this.src='assets/bood-design/images/logo-image.svg'" />
         </div>
       }
     </div>

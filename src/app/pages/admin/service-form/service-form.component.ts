@@ -188,8 +188,7 @@ export class ServiceFormComponent implements OnInit {
       next: (response) => {
         // Since backend runs on :5018 and frontend on :4200, we prepend backend URL for preview/saving 
         // to make sure it resolves properly during dev. In production this would just be the relative URL.
-        const fullUrl = `http://localhost:5018${response.url}`;
-        this.serviceForm.patchValue({ imageUrl: fullUrl });
+        this.serviceForm.patchValue({ imageUrl: response.url });
         this.isUploading = false;
       },
       error: (err) => {
